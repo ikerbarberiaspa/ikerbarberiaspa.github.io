@@ -1,0 +1,29 @@
+/* Navegación y cabeceras exclusivas de las páginas de categoría. La portada y CSS originales se mantienen intactos. */
+.subpage-intro{position:relative;isolation:isolate;overflow:hidden;background:#0b0a09;border-bottom:1px solid #4a3a23;min-height:445px;display:grid;align-items:center}
+.subpage-intro:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,#000 0%,#060505ed 38%,#06050544 75%,#0003 100%);z-index:-1}
+.subpage-intro-img{position:absolute;inset:0 0 0 42%;width:58%;height:100%;object-fit:cover;object-position:center;opacity:.60;z-index:-2}
+.subpage-intro-inner{padding:94px 0 84px;position:relative}
+.subpage-crumbs{display:flex;flex-wrap:wrap;gap:11px;color:#d6c2a4;font-size:12px;margin:0 0 22px}
+.subpage-crumbs a:hover{color:#fff;text-decoration:underline}
+.subpage-kicker{color:#d2ad72;font:700 11px/1.5 var(--display);letter-spacing:.18em;margin:0 0 14px}
+.subpage-intro h1{font:800 clamp(38px,5.3vw,76px)/1.07 var(--display);letter-spacing:-.05em;max-width:810px;margin:0 0 20px;text-wrap:balance}
+.subpage-intro h1 em{font:500 .95em/1.14 var(--serif);color:#e0b97a;letter-spacing:-.02em}
+.subpage-intro-lead{font:400 16px/1.75 var(--sans);max-width:650px;color:#e4d9c9;margin:0 0 27px}
+.subpage-nav{display:flex;flex-wrap:wrap;gap:10px;padding:26px 0 26px;border-bottom:1px solid #3c3327}
+.subpage-nav a{font:700 11px/1.4 var(--display);padding:10px 14px;border:1px solid #605038;color:#eee4d5;transition:background .2s}
+.subpage-nav a[aria-current="page"],.subpage-nav a:hover{background:#c9a365;color:#17120b}
+.subpage-service-note{margin:32px 0 0;color:#c0b7a9;line-height:1.8;max-width:800px}
+.subpage-callout{padding:58px 0;background:#0c0b09;border-top:1px solid #322819}
+.subpage-callout-inner{display:flex;align-items:center;justify-content:space-between;gap:28px}
+.subpage-callout h2{font:700 clamp(27px,3vw,40px)/1.18 var(--display);margin:0 0 12px;color:#f4ebe0}
+.subpage-callout p{color:#c0b7a9;line-height:1.75;max-width:640px;margin:0}
+.subpage-intro .btn{max-width:100%}
+.subpage-main .iker-extension{border-bottom:0}
+.subpage-main .section{padding-top:78px}
+.subpage-main .iker-category-nav{margin-top:15px}
+.subpage-main .service-card{height:100%}
+.subpage-main .service-card .service-index{display:none}
+.subpage-main .iker-events,.subpage-main .iker-school{background:#000}
+@media(max-width:1100px){.subpage-main .primary-nav{gap:12px}}
+@media(max-width:900px){.subpage-intro{min-height:370px}.subpage-intro-img{inset:0;width:100%;opacity:.30}.subpage-intro:after{background:#000a}.subpage-intro-inner{padding:64px 0 66px}.subpage-callout-inner{flex-direction:column;align-items:flex-start}.subpage-main .section{padding-top:60px}}
+@media(max-width:600px){.subpage-intro{min-height:370px}.subpage-intro-inner{padding:42px 0 52px}.subpage-intro h1{font-size:clamp(34px,10vw,48px)}.subpage-intro-lead{font-size:14px}.subpage-nav{gap:8px}.subpage-nav a{padding:9px 10px;font-size:10px}.subpage-callout{padding:38px 0}}

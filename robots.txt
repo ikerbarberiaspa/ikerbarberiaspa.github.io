@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://ikerbarberiaspa.github.io/sitemap.xml

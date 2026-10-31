@@ -1,0 +1,478 @@
+/* IKER: identidad original, fondo negro y logo transparente. */ :root {
+  --night:#000;
+  --dark:#0a0a0a;
+  --dark2:#131210;
+  --cream:#080808;
+  --ivory:#eee7dc;
+  --border:#3c3327;
+  color-scheme:dark
+}
+body {
+  background:#000;
+  color:#f2ece1
+}
+.site-header {
+  height:100px;
+  background:#000;
+  border-bottom-color:#3b2e1d
+}
+.site-header.scrolled {
+  height:88px
+}
+.header-inner {
+  gap:30px
+}
+.brand {
+  display:inline-flex;
+  justify-content:center;
+  align-items:center
+}
+.brand-logo {
+  display:block;
+  width:132px;
+  height:88px;
+  max-width:none;
+  object-fit:contain
+}
+.primary-nav {
+  gap:28px
+}
+.nav-link {
+  height:88px
+}
+.services,.gallery,.contact {
+  background:#000
+}
+.about,.audience {
+  background:#080808
+}
+.quote-section {
+  background:#0c0b09;
+  border-block:1px solid #30271b
+}
+.section-aside,.section-footnote,.about-copy .about-detail,.about-values small,.contact-lead {
+  color:#c0b7a9
+}
+.overline {
+  color:#d2ad72
+}
+.display-title em,.location-map-top h3 em {
+  color:#d2ad72
+}
+.draft-tag {
+  border-color:#56442d;
+  color:#d2ad72
+}
+.service-card {
+  background:#10100f;
+  border-color:#382f23
+}
+.service-card:hover {
+  border-color:#8c6a3d;
+  box-shadow:0 20px 38px #0008
+}
+.service-card h3 {
+  color:#f2ece1
+}
+.service-card p {
+  color:#bcb2a3;
+  line-height:1.55
+}
+/* Los rostros de estas tomas están en la parte inferior de la foto. */ .service-card-facial .service-image-wrap img {
+  object-position:50% 100%
+}
+.service-symbol {
+  border-color:#715632;
+  color:#d0a566
+}
+.service-filter,.filter {
+  color:#cfc3b0;
+  border-color:#5e4b32
+}
+.service-filter:hover,.service-filter.active,.filter:hover,.filter.active {
+  background:var(--gold);
+  border-color:var(--gold);
+  color:#17120b
+}
+.about-values,.about-values>div {
+  border-color:#473b2b
+}
+.about-values span {
+  color:#d2ad72
+}
+.about-values strong {
+  color:#eee7dc
+}
+.about-copy .intro {
+  color:#eee7dc
+}
+.text-link {
+  color:#e1bc7e;
+  border-color:#9a7747
+}
+.about-logo-artwork {
+  background:#000;
+  height:590px;
+  gap:0;
+  border-color:#8d6e40;
+  padding:60px 24px 86px
+}
+.about-logo-artwork:before {
+  display:none
+}
+.about-logo-artwork:after {
+  border-color:#66503377
+}
+.about-logo {
+  display:block;
+  width:100%;
+  height:auto;
+  max-width:470px;
+  max-height:320px;
+  object-fit:contain
+}
+.about-logo-artwork .artwork-ornament {
+  margin:27px 0 25px;
+  width:65px
+}
+.about-logo-artwork p {
+  font-size:24px
+}
+.about-logo-artwork .artwork-bottom {
+  bottom:34px
+}
+.gallery-supplied {
+  outline:1px solid #cba76744;
+  outline-offset:-1px
+}
+.gallery-supplied .gallery-overlay {
+  background:linear-gradient(0deg,#050505ed,transparent 95%);
+  line-height:1.6;
+  letter-spacing:.1em
+}
+.gallery-item.wide img {
+  object-position:50% 63%
+}
+.contact-list,.contact-line {
+  border-color:#473b2b
+}
+.contact-line small,.info-icon {
+  color:#d4b17c
+}
+.contact-line div>span,.contact-line a,.business-address {
+  color:#e4dbce
+}
+.contact-line a:hover {
+  color:#efc98f
+}
+.contact-line a.contact-map-link {
+  color:#dfb77b;
+  text-decoration-color:#8d6e42
+}
+.contact .btn-dark {
+  border-color:var(--gold);
+  background:var(--gold);
+  color:#17120b
+}
+.contact .btn-dark:hover {
+  background:var(--gold-light)
+}
+.location-map-top h3 {
+  color:#f2ece1
+}
+.location-map-top p:not(.overline) {
+  color:#c0b7a9
+}
+.location-map-frame {
+  box-shadow:0 20px 55px #0004
+}
+.facade-photo-wrap,.facade-photo-wrap img {
+  background:#000
+}
+.facade-panel figcaption {
+  background:#0c0b09
+}
+.footer {
+  background:#000;
+  border-top:1px solid #30271b
+}
+.footer-brand .brand-logo {
+  width:220px;
+  height:147px
+}
+.footer-main {
+  grid-template-columns:1.3fr .72fr .85fr 1fr
+}
+.footer-brand p {
+  margin-top:14px
+}
+.footer-lower {
+  border-color:#30271b
+}
+@media(min-width:901px) {
+  .nav-link::after {
+    bottom:19px
+  }
+
+}
+@media(max-width:1120px) {
+  .header-inner {
+    gap:20px
+  }
+  .primary-nav {
+    gap:20px
+  }
+  .header-book {
+    padding:13px 14px
+  }
+
+}
+@media(max-width:900px) {
+  .site-header,.site-header.scrolled {
+    height:84px
+  }
+  .brand-logo {
+    width:110px;
+    height:74px
+  }
+  .primary-nav {
+    top:84px;
+    background:#000;
+    border-bottom:1px solid #6d5231
+  }
+  .nav-link {
+    height:auto
+  }
+  .about-logo-artwork {
+    height:480px;
+    padding-top:50px;
+    padding-bottom:76px
+  }
+  .about-logo {
+    max-width:390px;
+    max-height:275px
+  }
+  .footer-main {
+    grid-template-columns:1fr 1fr
+  }
+
+}
+@media(max-width:620px) {
+  .site-header,.site-header.scrolled {
+    height:80px
+  }
+  .brand-logo {
+    width:105px;
+    height:70px
+  }
+  .primary-nav {
+    top:80px
+  }
+  .service-card-bottom {
+    padding:19px 17px
+  }
+  .about-logo-artwork {
+    height:410px;
+    min-height:410px;
+    padding:40px 23px 70px
+  }
+  .about-logo {
+    max-width:360px;
+    max-height:245px
+  }
+  .about-logo-artwork .artwork-ornament {
+    margin:20px 0
+  }
+  .about-logo-artwork p {
+    font-size:21px
+  }
+  .about-logo-artwork .artwork-bottom {
+    bottom:25px
+  }
+  .footer-brand .brand-logo {
+    width:205px;
+    height:137px
+  }
+  .footer-main {
+    grid-template-columns:1fr 1fr
+  }
+  .footer-brand {
+    grid-column:1/-1
+  }
+
+}
+@media(max-width:380px) {
+  .about-logo-artwork {
+    height:370px;
+    min-height:370px
+  }
+  .about-logo-artwork p {
+    font-size:18px
+  }
+
+}
+/* Redes sociales con sus colores de marca. */ .social-contact {
+  margin-top:30px;
+  padding-top:24px;
+  border-top:1px solid #473b2b
+}
+.social-contact .overline {
+  margin:0 0 16px;
+  font-size:10px;
+  letter-spacing:.17em
+}
+.social-links {
+  margin:0;
+  padding:0
+}
+.social-links-contact {
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:10px
+}
+.social-link {
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+  gap:10px;
+  min-width:0;
+  min-height:88px;
+  padding:14px 10px;
+  border:1px solid #6c5232;
+  background:#0c0b09;
+  color:#f2ece1;
+  transition:background .2s,border-color .2s,color .2s,transform .2s
+}
+.social-link:hover {
+  background:#20180e;
+  border-color:var(--gold-light);
+  color:var(--gold-light);
+  transform:translateY(-2px)
+}
+.social-link .social-icon {
+  width:30px;
+  height:30px;
+  max-width:none;
+  object-fit:contain;
+  flex:0 0 auto
+}
+.social-link>span {
+  font:700 12px/1.3 var(--sans);
+  letter-spacing:.02em
+}
+.social-links-footer {
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:3px
+}
+.social-links-footer .social-link {
+  width:46px;
+  min-height:46px;
+  padding:10px;
+  gap:0
+}
+.social-links-footer .social-icon {
+  width:25px;
+  height:25px
+}
+@media(max-width:380px) {
+  .social-links-contact {
+    gap:7px
+  }
+  .social-link {
+    padding:13px 6px
+  }
+  .social-link>span {
+    font-size:11px
+  }
+
+}
+/* Acceso directo a WhatsApp, disponible durante la navegación. */ .whatsapp-float {
+  position:fixed;
+  right:max(22px,env(safe-area-inset-right));
+  bottom:calc(22px + env(safe-area-inset-bottom));
+  z-index:70;
+  width:60px;
+  height:60px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:#25d366;
+  box-shadow:0 5px 22px #0007;
+  border:1px solid #ffffff40;
+  transition:background .2s,transform .2s,box-shadow .2s
+}
+.whatsapp-float img {
+  width:36px;
+  height:36px;
+  max-width:none;
+  object-fit:contain
+}
+.whatsapp-float:hover {
+  background:#1cbd5a;
+  transform:translateY(-3px);
+  box-shadow:0 8px 26px #0009
+}
+.whatsapp-float:focus-visible {
+  outline:3px solid #fff;
+  outline-offset:4px
+}
+body:has(dialog[open]) .whatsapp-float {
+  visibility:hidden;
+  pointer-events:none
+}
+@media(max-width:620px) {
+  .whatsapp-float {
+    width:56px;
+    height:56px;
+    right:max(16px,env(safe-area-inset-right));
+    bottom:calc(16px + env(safe-area-inset-bottom))
+  }
+  .whatsapp-float img {
+    width:34px;
+    height:34px
+  }
+
+}
+/* Galería facial: mostrar el rostro y colocar el título sobre el torso. */ .gallery-facial img {
+  object-position:50% 100%
+}
+.gallery-facial .gallery-overlay {
+  inset:0 0 auto;
+  padding:15px 18px 32px;
+  align-items:start;
+  background:linear-gradient(#050505b8,transparent)
+}
+/* Portada compacta en escritorio: acciones visibles en pantallas de portátil. */ @media(min-width:931px) {
+  .hero {
+    min-height:0;
+    height:clamp(440px,calc(100svh - 134px),640px)
+  }
+  .hero-content {
+    height:100%;
+    min-height:0;
+    padding:28px 0 52px
+  }
+  .hero h1 {
+    font-size:clamp(54px,6vw,88px)
+  }
+  .hero .overline {
+    margin-bottom:16px
+  }
+  .hero .short-gold-line {
+    margin:20px 0 16px
+  }
+  .hero-lead {
+    font-size:16px;
+    line-height:1.65;
+    margin-bottom:20px
+  }
+  .hero-cta .btn {
+    min-height:51px;
+    padding:14px 20px
+  }
+
+}
