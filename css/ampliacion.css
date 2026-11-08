@@ -388,3 +388,286 @@
   }
 
 }
+
+/* Controles discretos para los nuevos carruseles de la galería. */
+.gallery-carousel {
+  isolation:isolate
+}
+.gallery-carousel-view {
+  position:absolute;
+  inset:0;
+  display:block;
+  width:100%;
+  height:100%;
+  border:0;
+  padding:0;
+  color:inherit;
+  background:transparent;
+  text-align:left;
+  cursor:zoom-in
+}
+.gallery-carousel-view:focus-visible {
+  outline:2px solid #e4c48a;
+  outline-offset:-4px
+}
+.gallery-carousel-control {
+  position:absolute;
+  z-index:2;
+  top:50%;
+  display:grid;
+  place-items:center;
+  width:38px;
+  height:38px;
+  padding:0;
+  border:1px solid #ffffffa8;
+  border-radius:50%;
+  color:#fff;
+  background:#161510c9;
+  font:400 26px/1 var(--display);
+  transform:translateY(-50%);
+  cursor:pointer;
+  transition:background .2s,transform .2s
+}
+.gallery-carousel-control:hover,
+.gallery-carousel-control:focus-visible {
+  background:#8d7049;
+  transform:translateY(-50%) scale(1.06)
+}
+.gallery-carousel-prev { left:10px }
+.gallery-carousel-next { right:10px }
+.gallery-carousel-indicators {
+  position:absolute;
+  z-index:3;
+  left:50%;
+  bottom:10px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:8px;
+  max-width:calc(100% - 72px);
+  padding:6px 9px;
+  border:1px solid #ffffff45;
+  border-radius:999px;
+  background:#11111191;
+  backdrop-filter:blur(5px);
+  transform:translateX(-50%);
+  pointer-events:none
+}
+.gallery-carousel-indicator {
+  display:block;
+  flex:0 0 8px;
+  width:8px;
+  height:8px;
+  padding:0;
+  border:0;
+  border-radius:50%;
+  background:#ffffff9c;
+  opacity:.78;
+  cursor:pointer;
+  pointer-events:auto;
+  transition:background .2s,opacity .2s,transform .2s
+}
+.gallery-carousel-indicator.is-active {
+  background:#e4c48a;
+  opacity:1;
+  transform:scale(1.25)
+}
+.gallery-carousel-indicator:hover,
+.gallery-carousel-indicator:focus-visible {
+  outline:2px solid #fff;
+  outline-offset:3px;
+  opacity:1
+}
+@media(max-width:620px) {
+  .gallery-carousel-control {
+    width:32px;
+    height:32px;
+    font-size:23px
+  }
+  .gallery-carousel-prev { left:7px }
+  .gallery-carousel-next { right:7px }
+}
+
+/* Tarjetas de consulta para dejar claro que las fotos son solo una muestra. */
+.service-more-card {
+  min-height:420px;
+  display:flex;
+  border-color:#6c5432;
+  background:linear-gradient(145deg,#1b1812 0%,#10100f 76%);
+  position:relative;
+  overflow:hidden
+}
+.service-more-card-content {
+  width:100%;
+  min-height:420px;
+  padding:clamp(24px,3vw,38px);
+  display:flex;
+  flex-direction:column;
+  align-items:flex-start;
+  justify-content:flex-start;
+  position:relative;
+  z-index:1
+}
+.service-more-card::before {
+  content:'';
+  position:absolute;
+  inset:0 auto 0 0;
+  width:4px;
+  background:var(--audience-accent)
+}
+.service-more-card-men {
+  --audience-accent:#9bbdd2;
+  border-color:#43596a;
+  background:linear-gradient(135deg,#17232d 0%,#10100f 78%)
+}
+.service-more-card-women {
+  --audience-accent:#dfa9b3;
+  border-color:#70464d;
+  background:linear-gradient(135deg,#27181e 0%,#10100f 78%)
+}
+.service-more-mark {
+  display:grid;
+  place-items:center;
+  width:108px;
+  height:108px;
+  margin-bottom:17px;
+  border:1px solid var(--audience-accent);
+  border-radius:16px;
+  overflow:hidden;
+  color:var(--audience-accent);
+  background:#080a0cb3
+}
+.service-more-mark img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  filter:none;
+  transform:none;
+  transition:none
+}
+.service-more-card:hover .service-more-mark img {
+  filter:none;
+  transform:none
+}
+.service-more-card .service-more-eyebrow {
+  color:var(--audience-accent);
+  font:800 12px/1.5 var(--display);
+  letter-spacing:.13em;
+  margin:0 0 7px
+}
+.service-more-card h3 {
+  max-width:100%;
+  font-size:clamp(30px,3.2vw,38px);
+  line-height:1.16;
+  margin:0 0 10px
+}
+.service-more-card-content>p:not(.service-more-eyebrow) {
+  max-width:370px;
+  color:#ccc2b5;
+  font-size:14px;
+  line-height:1.65
+}
+.service-more-card-content .service-more-products {
+  margin-top:10px;
+  color:#e3d6c2;
+  font-size:12px;
+  line-height:1.55
+}
+.service-more-card-content>p strong {
+  color:#f2ece1
+}
+.service-more-link {
+  display:inline-flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  margin-top:auto;
+  padding-top:12px;
+  padding:12px 14px;
+  border:1px solid #715632;
+  color:#d0a566;
+  font:800 11px/1.4 var(--display);
+  letter-spacing:.08em;
+  text-decoration:none;
+  transition:background .2s,color .2s,border-color .2s
+}
+.service-more-link:hover,.service-more-link:focus-visible {
+  background:var(--gold);
+  border-color:var(--gold);
+  color:#17120b
+}
+.service-more-link:focus-visible {
+  outline:2px solid #e4c48a;
+  outline-offset:4px
+}
+@media(max-width:620px) {
+  .service-more-card,.service-more-card-content {
+    min-height:390px
+  }
+  .service-more-card-content {
+    padding:27px 22px 30px
+  }
+  .service-more-mark { width:92px;height:92px;margin-bottom:15px }
+  .service-more-card h3 { font-size:32px }
+}
+
+/* En Spa, las tarjetas para cada público aparecen agrupadas y señaladas. */
+.spa-services-grid .spa-audience-label {
+  position:absolute;
+  top:17px;
+  right:17px;
+  z-index:2;
+  padding:8px 10px;
+  border:1px solid #d0a566;
+  background:#17140fd9;
+  color:#e6c58d;
+  font:800 9px/1.2 var(--display);
+  letter-spacing:.1em
+}
+
+/* Tarjetas originales de consulta: una imagen completa por público, con tamaño uniforme y enlace a WhatsApp. */
+.service-more-image-card {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  width: 100%;
+  min-width: 0;
+  min-height: 0;
+  height: 100%;
+  aspect-ratio: 400 / 417;
+  padding: 0;
+  overflow: hidden;
+  border: 1px solid #6c5432;
+  background: #100e0c;
+  text-decoration: none;
+  box-shadow: 0 12px 30px #0002;
+}
+.service-more-image-card::before { display: none; }
+.service-more-image-card img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: cover;
+  filter: none;
+  transform: none;
+  transition: filter .25s ease, transform .25s ease;
+}
+.service-more-image-card:hover img {
+  filter: none;
+  transform: scale(1.015);
+}
+.service-more-image-card:focus-visible {
+  outline: 3px solid #e2bd7c;
+  outline-offset: 4px;
+}
+@media(max-width:620px) {
+  .service-more-image-card {
+    height: auto;
+    min-height: 0;
+    aspect-ratio: 400 / 417;
+  }
+}
+

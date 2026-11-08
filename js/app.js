@@ -108,14 +108,83 @@ qsa('.gallery-item').forEach(item => item.addEventListener('click', () => {
   lightboxCaption.textContent = item.dataset.photoType === 'ilustrativa' ? caption + ' · Imagen ilustrativa' : caption;
   if (typeof lightbox.showModal === 'function') lightbox.showModal();
 }));
+// Carruseles de Bótox capilar y tarjetas de servicios.
+qsa('.gallery-carousel').forEach(carousel => {
+  let slides;
+  try { slides = JSON.parse(carousel.dataset.slides || '[]'); } catch { return; }
+  if (slides.length < 2) return;
+  const image = qs('img', carousel);
+  if (!image) return;
+  let current = 0;
+  let timer;
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const indicators = document.createElement('div');
+  indicators.className = 'gallery-carousel-indicators';
+  indicators.setAttribute('role', 'group');
+  indicators.setAttribute('aria-label', `Fotos de ${carousel.dataset.caption || 'este servicio'}`);
+  const indicatorButtons = slides.map((slide, index) => {
+    const button = document.createElement('button');
+    button.type = 'button';
+    button.className = 'gallery-carousel-indicator';
+    button.setAttribute('aria-label', `Mostrar foto ${index + 1} de ${slides.length}`);
+    button.setAttribute('aria-pressed', 'false');
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      showSlide(index);
+    });
+    indicators.append(button);
+    return button;
+  });
+  carousel.append(indicators);
+  const showSlide = (nextIndex) => {
+    current = (nextIndex + slides.length) % slides.length;
+    const slide = slides[current];
+    image.src = slide.src;
+    image.srcset = slide.srcset;
+    image.alt = slide.alt;
+    image.width = slide.width;
+    image.height = slide.height;
+    image.style.objectPosition = slide.objectPosition || '';
+    carousel.dataset.fullSrc = slide.full;
+    indicatorButtons.forEach((button, index) => {
+      const active = index === current;
+      button.classList.toggle('is-active', active);
+      button.setAttribute('aria-pressed', String(active));
+      button.tabIndex = active ? 0 : -1;
+    });
+  };
+  qsa('[data-carousel-direction]', carousel).forEach(button => {
+    button.addEventListener('click', event => {
+      event.preventDefault();
+      event.stopPropagation();
+      showSlide(current + Number(button.dataset.carouselDirection));
+    });
+  });
+  const pause = () => { window.clearInterval(timer); timer = undefined; };
+  const resume = () => {
+    if (!reducedMotion && !timer) timer = window.setInterval(() => showSlide(current + 1), 5500);
+  };
+  carousel.addEventListener('pointerenter', pause);
+  carousel.addEventListener('pointerleave', resume);
+  carousel.addEventListener('focusin', pause);
+  carousel.addEventListener('focusout', event => {
+    if (!carousel.contains(event.relatedTarget)) resume();
+  });
+  document.addEventListener('visibilitychange', () => document.hidden ? pause() : resume());
+  showSlide(0);
+  resume();
+});
 qs('#close-lightbox')?.addEventListener('click', () => lightbox.close());
 lightbox?.addEventListener('click', e => { if (e.target === lightbox) lightbox.close(); });
 
 // Filtros de servicios por categoría: hombres y mujeres.
 const serviceSelection = createSelection({items:qsa('[data-service-category]'), filters:qsa('[data-service-filter]'),
-  categoryKey:'serviceCategory', filterKey:'serviceFilter', toggle:qs('#toggle-services'), status:qs('#services-count'), label:'servicios'});
+  categoryKey:'serviceCategory', filterKey:'serviceFilter', label:'servicios'});
 qsa('[data-jump-filter]').forEach(link => {
   link.addEventListener('click', () => serviceSelection.select(link.dataset.jumpFilter));
 });
 const year = qs('#year');
 if(year) year.textContent=String(new Date().getFullYear());
+
+
